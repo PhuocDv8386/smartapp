@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AppTools Pro – SMS & Auto Call</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --border: #1e1e2e;
+    --accent1: #00e5ff;
+    --accent2: #7c3aed;
+    --accent3: #10b981;
+    --text: #f0f0f5;
+    --muted: #6b7280;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background mesh */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(0,229,255,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav-contact {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .nav-contact a {
+    color: var(--accent1);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 80px 0 60px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.2);
+    color: var(--accent1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  /* APPS GRID */
+  .apps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 20px 0 80px;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  @media (max-width: 600px) {
+    .apps { grid-template-columns: 1fr; }
+  }
+
+  .app-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .app-card.sms:hover { border-color: var(--accent1); box-shadow: 0 24px 60px rgba(0,229,255,0.1); }
+  .app-card.call:hover { border-color: var(--accent2); box-shadow: 0 24px 60px rgba(124,58,237,0.15); }
+
+  .app-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    border-radius: 2px 2px 0 0;
+  }
+  .app-card.sms::before { background: linear-gradient(90deg, var(--accent1), transparent); }
+  .app-card.call::before { background: linear-gradient(90deg, var(--accent2), transparent); }
+
+  .app-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+  .app-card.sms .app-icon { background: rgba(0,229,255,0.1); }
+  .app-card.call .app-icon { background: rgba(124,58,237,0.12); }
+
+  .app-card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .app-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .features {
+    list-style: none;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .features li {
+    font-size: 0.85rem;
+    color: #a0a0b0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .features li::before {
+    content: '✓';
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .app-card.sms .features li::before {
+    background: rgba(0,229,255,0.1);
+    color: var(--accent1);
+  }
+  .app-card.call .features li::before {
+    background: rgba(124,58,237,0.12);
+    color: #a78bfa;
+  }
+
+  .btn-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 12px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .btn-download:hover { opacity: 0.85; transform: scale(0.98); }
+  .app-card.sms .btn-download {
+    background: linear-gradient(135deg, var(--accent1), #0ea5e9);
+    color: #0a0a0f;
+  }
+  .app-card.call .btn-download {
+    background: linear-gradient(135deg, var(--accent2), #4f46e5);
+    color: #fff;
+  }
+
+  /* HOW TO */
+  .how {
+    border-top: 1px solid var(--border);
+    padding: 60px 0;
+    text-align: center;
+  }
+  .how h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -0.01em;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+  @media (max-width: 640px) {
+    .steps { grid-template-columns: 1fr !important; }
+  }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .step-num {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent1);
+    opacity: 0.4;
+    margin-bottom: 10px;
+  }
+  .step h4 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 700;
+    font-size: 0.97rem;
+    margin-bottom: 6px;
+  }
+  .step p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer p { color: var(--muted); font-size: 0.83rem; }
+  footer a { color: var(--accent1); text-decoration: none; font-weight: 600; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+  }
+  .modal h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .modal p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 24px; }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .modal-btn {
+    display: inline-block;
+    padding: 11px 28px;
+    border-radius: 10px;
+    background: var(--accent1);
+    color: #0a0a0f;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: 'Be Vietnam Pro', sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">SmartApp Tools</div>
+    <div class="nav-contact">Hỗ trợ: <a href="https://zalo.me/0931077249" target="_blank">Zalo</a> · <a href="https://t.me/Phuoc_Tran18" target="_blank">Telegram</a></div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">🚀 Công cụ tự động hoá</div>
+    <h1>SmartSMS & SmartCall<br><span>tự động hoá bán hàng</span></h1>
+    <p>Hai ứng dụng Android giúp bạn tự động gửi tin nhắn hàng loạt và thực hiện cuộc gọi tự động – tiết kiệm thời gian, tăng hiệu quả bán hàng.</p>
+  </div>
+
+  <!-- APPS -->
+  <div class="apps">
+
+    <!-- SMS App -->
+    <div class="app-card sms">
+      <div class="app-icon">💬</div>
+      <h2>SmartSMS</h2>
+      <p>Gửi tin nhắn SMS hàng loạt tới danh sách số điện thoại, lên lịch tự động theo giờ.</p>
+      <ul class="features">
+        <li>Gửi hàng loạt tới nhiều số</li>
+        <li>Lên lịch gửi tự động</li>
+        <li>Nhập danh sách từ file</li>
+        <li>Theo dõi trạng thái gửi</li>
+      </ul>
+      <a href="#" class="btn-download" onclick="openModal('sms'); return false;">
+        ⬇ Tải APK – SmartSMS
+      </a>
+    </div>
+
+    <!-- Call App -->
+    <div class="app-card call">
+      <div class="app-icon">📞</div>
+      <h2>SmartCall</h2>
+      <p>Tự động gọi điện theo danh sách, phát âm thanh hoặc kết nối tổng đài, hoàn toàn tự động.</p>
+      <ul class="features">
+        <li>Gọi tự động theo danh sách</li>
+        <li>Phát file âm thanh khi nghe máy</li>
+        <li>Hẹn giờ gọi thông minh</li>
+        <li>Báo cáo cuộc gọi chi tiết</li>
+      </ul>
+      <a href="#" class="btn-download" onclick="openModal('call'); return false;">
+        ⬇ Tải APK – SmartCall
+      </a>
+    </div>
+
+  </div>
+
+  <!-- HOW TO -->
+  <div class="how">
+    <h3>Cách cài đặt</h3>
+    <div class="steps" style="grid-template-columns: repeat(2,1fr);">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Tắt Play Protect <span style="color:#f59e0b;font-size:0.8rem;">⚠ Quan trọng</span></h4>
+        <p>Mở <strong>CH Play</strong> → nhấn ảnh đại diện góc trên phải → <strong>Play Protect</strong> → nhấn ⚙ → tắt <em>"Quét ứng dụng bằng Play Protect"</em>. Nếu không tắt, app sẽ bị chặn khi cài.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Cho phép cài ngoài CH Play</h4>
+        <p>Vào <strong>Cài đặt → Bảo mật</strong> → Bật <em>"Cho phép cài từ nguồn không xác định"</em> (hoặc cấp quyền cho trình duyệt/file manager khi được hỏi).</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Tải APK</h4>
+        <p>Nhấn nút <strong>Tải APK</strong> bên trên, file sẽ được tải về điện thoại Android của bạn.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Cài & sử dụng</h4>
+        <p>Mở file APK vừa tải, nhấn <strong>Cài đặt</strong> và bắt đầu dùng ngay. Liên hệ Zalo nếu cần hỗ trợ.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 SmartApp Tools. All rights reserved.</p>
+    <p>Liên hệ: <a href="https://zalo.me/0931077249">Zalo 0931077249</a> · <a href="https://t.me/Phuoc_Tran18">Telegram</a></p>
+  </footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-icon" style="font-size:2.5rem;margin-bottom:12px"></div>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+    <a href="#" class="modal-btn" id="modal-link">⬇ Tải về</a>
+  </div>
+</div>
+
+<script>
+const apps = {
+  sms: {
+    icon: '💬',
+    title: 'SmartSMS',
+    desc: 'Nhấn nút bên dưới để tải file APK về điện thoại. Liên hệ Zalo 0931077249 nếu cần hỗ trợ cài đặt.',
+    link: 'https://drive.google.com/uc?export=download&id=1U8k72VZhBKcM0AaKrcDzcjD86BJIX4rj'
+  },
+  call: {
+    icon: '📞',
+    title: 'SmartCall',
+    desc: 'Nhấn nút bên dưới để tải file APK về điện thoại. Liên hệ Zalo 0931077249 nếu cần hỗ trợ cài đặt.',
+    link: 'https://drive.google.com/uc?export=download&id=14nWyzDHg5n3QZEXQHjl26xV3VLDMaalV'
+  }
+};
+
+function openModal(type) {
+  const app = apps[type];
+  document.getElementById('modal-icon').textContent = app.icon;
+  document.getElementById('modal-title').textContent = 'Tải ' + app.title;
+  document.getElementById('modal-desc').textContent = app.desc;
+  document.getElementById('modal-link').href = app.link;
+  document.getElementById('modal').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>
