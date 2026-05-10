@@ -362,6 +362,98 @@
     border: none;
     font-family: 'Be Vietnam Pro', sans-serif;
   }
+  /* GUIDE SECTION */
+  .guide-section {
+    border-top: 1px solid var(--border);
+    padding: 60px 0 40px;
+  }
+  .guide-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+  .guide-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .guide-tab {
+    padding: 10px 28px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .guide-tab.active {
+    background: linear-gradient(135deg, #00e5ff, #7c3aed);
+    color: #fff;
+    border-color: transparent;
+  }
+  .guide-content { display: none; }
+  .guide-content.active { display: block; }
+
+  .guide-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .guide-block-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .call-header { background: rgba(0,229,255,0.07); border-bottom: 1px solid rgba(0,229,255,0.12); color: var(--accent1); }
+  .sms-header  { background: rgba(124,58,237,0.07); border-bottom: 1px solid rgba(124,58,237,0.12); color: #a78bfa; }
+  .guide-icon { font-size: 1.1rem; }
+  .guide-block-body {
+    padding: 18px 20px;
+  }
+  .guide-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .guide-list li {
+    font-size: 0.875rem;
+    color: #c0c0d0;
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+  }
+  .guide-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+    top: 2px;
+  }
+  .guide-tip {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--accent1);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.83rem;
+    color: #a0a0b0;
+    line-height: 1.6;
+  }
 </style>
 </head>
 <body>
@@ -445,6 +537,159 @@
     </div>
   </div>
 
+  <!-- USAGE GUIDE TABS -->
+  <div class="guide-section">
+    <h3 class="guide-title">📖 Hướng dẫn sử dụng</h3>
+    <div class="guide-tabs">
+      <button class="guide-tab active" onclick="switchGuide('call')">📞 SmartCall</button>
+      <button class="guide-tab" onclick="switchGuide('sms')">💬 SmartSMS</button>
+    </div>
+
+    <!-- SMARTCALL GUIDE -->
+    <div id="guide-call" class="guide-content active">
+
+      <div class="guide-block">
+        <div class="guide-block-header call-header">
+          <span class="guide-icon">📋</span>
+          <span>Bước 1 – Import danh sách số điện thoại</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Chuẩn bị file <strong>Excel (.xlsx)</strong> – cột A chứa số điện thoại, cột B chứa ghi chú (tên KH, địa chỉ…) – không bắt buộc</li>
+            <li>Mở app → nhấn nút <strong>📂 Import Excel</strong></li>
+            <li>Chọn file từ bộ nhớ máy → app tự phân loại theo nhà mạng (Viettel, Mobifone, Vinaphone…)</li>
+            <li>Nhấn vào tab nhà mạng để lọc, hoặc dùng ô <strong>🔍 Tìm kiếm</strong> để tra số cụ thể</li>
+          </ul>
+          <div class="guide-tip">💡 Nếu cột B có ghi chú, khi gọi đến số đó app sẽ hiện <strong>popup overlay</strong> lên màn hình để nhắc thông tin khách hàng.</div>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header call-header">
+          <span class="guide-icon">📱</span>
+          <span>Bước 2 – Chọn SIM gọi</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li><strong>SIM 1 / SIM 2</strong> – gọi cố định bằng 1 SIM</li>
+            <li><strong>🔀 Xen kẽ</strong> – tự động luân phiên SIM 1 → SIM 2 → SIM 1… giúp tránh bị khoá cuộc gọi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header call-header">
+          <span class="guide-icon">⚙️</span>
+          <span>Bước 3 – Cài đặt trước khi gọi tự động</span>
+        </div>
+        <div class="guide-block-body">
+          <p style="margin-bottom:12px;color:#a0a0b0;font-size:0.88rem;">Nhấn nút <strong>⚙️ Cài đặt</strong> để chỉnh các tuỳ chọn:</p>
+          <ul class="guide-list">
+            <li><strong>⏱ Delay cố định</strong> – chờ X giây giữa mỗi cuộc gọi (ví dụ: 5 giây)</li>
+            <li><strong>🎲 Delay ngẫu nhiên</strong> – chờ ngẫu nhiên từ MIN đến MAX giây (tự nhiên hơn, tránh spam)</li>
+            <li><strong>🔁 Gọi lại</strong> – nếu máy bận/không nghe, app sẽ tự gọi lại X lần rồi mới chuyển số tiếp</li>
+            <li><strong>🔄 Lặp vòng</strong> – sau khi gọi hết danh sách, tự động quay lại gọi từ đầu</li>
+            <li><strong>📵 Tự ngắt máy</strong> – tự động cúp máy sau X giây nếu không có người nghe (cần cấp quyền)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header call-header">
+          <span class="guide-icon">▶️</span>
+          <span>Bước 4 – Gọi tự động</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Nhấn <strong>⏮ Bắt đầu</strong> → app tự gọi tuần tự từng số, chờ kết thúc cuộc gọi rồi chuyển số tiếp</li>
+            <li>Nhấn <strong>⏹ Dừng</strong> để tạm dừng (nút đếm ngược giây đang chờ) – dữ liệu được autosave</li>
+            <li>Nhấn <strong>▶ Tiếp tục</strong> để gọi tiếp từ số chưa gọi</li>
+            <li>Nhấn vào từng số để <strong>gọi thủ công</strong>, giữ để chọn nhiều số rồi xoá</li>
+          </ul>
+          <div class="guide-tip">💡 App tự phân loại kết quả: <strong style="color:#10b981">Có kết nối</strong> (nghe &gt;8s) · <strong style="color:#f59e0b">Không nghe</strong> · <strong style="color:#ef4444">Máy bận/Ngoài vùng</strong></div>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header call-header">
+          <span class="guide-icon">📊</span>
+          <span>Lịch sử & Xuất báo cáo</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Nhấn <strong>📋 Lịch sử</strong> để xem toàn bộ cuộc gọi kèm kết quả, tỷ lệ nghe máy</li>
+            <li>Nhấn <strong>📊 Xuất Excel</strong> để lưu báo cáo ra file .xlsx</li>
+            <li>Nhấn <strong>💾 Lưu Session</strong> để lưu tiến trình – lần sau mở app chọn <strong>📂 Mở Session</strong> để tiếp tục</li>
+          </ul>
+          <div class="guide-tip">💡 App tự <strong>autosave</strong> mỗi 30 giây. Nếu tắt app giữa chừng, lần sau mở lên sẽ hỏi có muốn khôi phục không.</div>
+        </div>
+      </div>
+
+    </div><!-- end guide-call -->
+
+    <!-- SMARTSMS GUIDE -->
+    <div id="guide-sms" class="guide-content">
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">📋</span>
+          <span>Bước 1 – Import danh sách & soạn tin</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Chuẩn bị file <strong>Excel (.xlsx)</strong> – cột A chứa số điện thoại</li>
+            <li>Mở app → nhấn <strong>📂 Import</strong> để tải danh sách lên</li>
+            <li>Soạn nội dung tin nhắn vào ô text, có thể dùng biến <strong>{tên}</strong> nếu cột B có tên khách</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">📱</span>
+          <span>Bước 2 – Chọn SIM gửi</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Chọn <strong>SIM 1</strong> hoặc <strong>SIM 2</strong> để gửi SMS qua SIM đó</li>
+            <li>Lưu ý: SMS tính phí theo gói cước SIM, kiểm tra số dư trước khi gửi hàng loạt</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">▶️</span>
+          <span>Bước 3 – Gửi tự động</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Nhấn <strong>▶ Bắt đầu gửi</strong> → app tự gửi SMS lần lượt từng số</li>
+            <li>Có thể đặt <strong>delay giữa mỗi tin</strong> để tránh bị nhà mạng chặn</li>
+            <li>Nhấn <strong>⏹ Dừng</strong> để tạm dừng bất kỳ lúc nào</li>
+          </ul>
+          <div class="guide-tip">⚠️ Nên đặt delay tối thiểu <strong>3–5 giây</strong> giữa mỗi tin để tránh bị nhà mạng khoá SIM do spam.</div>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">📊</span>
+          <span>Theo dõi trạng thái gửi</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Mỗi số hiển thị trạng thái: <strong style="color:#10b981">✅ Đã gửi</strong> · <strong style="color:#ef4444">❌ Thất bại</strong></li>
+            <li>Xem tổng số đã gửi / thất bại / còn lại ngay trên màn hình chính</li>
+            <li>Xuất báo cáo kết quả ra file Excel sau khi gửi xong</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- end guide-sms -->
+
+  </div><!-- end guide-section -->
+
   <!-- FOOTER -->
   <footer>
     <p>© 2025 SmartApp Tools. All rights reserved.</p>
@@ -480,7 +725,13 @@ const apps = {
   }
 };
 
-function openModal(type) {
+function switchGuide(type) {
+  document.querySelectorAll('.guide-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.guide-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('guide-' + type).classList.add('active');
+  event.target.classList.add('active');
+}
+
   const app = apps[type];
   document.getElementById('modal-icon').textContent = app.icon;
   document.getElementById('modal-title').textContent = 'Tải ' + app.title;
