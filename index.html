@@ -27,7 +27,6 @@
     overflow-x: hidden;
   }
 
-  /* Background mesh */
   body::before {
     content: '';
     position: fixed;
@@ -47,7 +46,6 @@
     z-index: 1;
   }
 
-  /* NAV */
   nav {
     display: flex;
     align-items: center;
@@ -65,17 +63,9 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .nav-contact {
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-  .nav-contact a {
-    color: var(--accent1);
-    text-decoration: none;
-    font-weight: 600;
-  }
+  .nav-contact { font-size: 0.85rem; color: var(--muted); }
+  .nav-contact a { color: var(--accent1); text-decoration: none; font-weight: 600; }
 
-  /* HERO */
   .hero {
     text-align: center;
     padding: 80px 0 60px;
@@ -118,7 +108,6 @@
     animation: fadeUp 0.7s ease 0.2s both;
   }
 
-  /* APPS GRID */
   .apps {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -126,9 +115,7 @@
     padding: 20px 0 80px;
     animation: fadeUp 0.8s ease 0.3s both;
   }
-  @media (max-width: 600px) {
-    .apps { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 600px) { .apps { grid-template-columns: 1fr; } }
 
   .app-card {
     background: var(--surface);
@@ -139,10 +126,7 @@
     overflow: hidden;
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   }
-  .app-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-  }
+  .app-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
   .app-card.sms:hover { border-color: var(--accent1); box-shadow: 0 24px 60px rgba(0,229,255,0.1); }
   .app-card.call:hover { border-color: var(--accent2); box-shadow: 0 24px 60px rgba(124,58,237,0.15); }
 
@@ -209,14 +193,8 @@
     justify-content: center;
     flex-shrink: 0;
   }
-  .app-card.sms .features li::before {
-    background: rgba(0,229,255,0.1);
-    color: var(--accent1);
-  }
-  .app-card.call .features li::before {
-    background: rgba(124,58,237,0.12);
-    color: #a78bfa;
-  }
+  .app-card.sms .features li::before { background: rgba(0,229,255,0.1); color: var(--accent1); }
+  .app-card.call .features li::before { background: rgba(124,58,237,0.12); color: #a78bfa; }
 
   .btn-download {
     display: flex;
@@ -235,16 +213,9 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
   .btn-download:hover { opacity: 0.85; transform: scale(0.98); }
-  .app-card.sms .btn-download {
-    background: linear-gradient(135deg, var(--accent1), #0ea5e9);
-    color: #0a0a0f;
-  }
-  .app-card.call .btn-download {
-    background: linear-gradient(135deg, var(--accent2), #4f46e5);
-    color: #fff;
-  }
+  .app-card.sms .btn-download { background: linear-gradient(135deg, var(--accent1), #0ea5e9); color: #0a0a0f; }
+  .app-card.call .btn-download { background: linear-gradient(135deg, var(--accent2), #4f46e5); color: #fff; }
 
-  /* HOW TO */
   .how {
     border-top: 1px solid var(--border);
     padding: 60px 0;
@@ -259,13 +230,11 @@
   }
   .steps {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
     text-align: left;
   }
-  @media (max-width: 640px) {
-    .steps { grid-template-columns: 1fr !important; }
-  }
+  @media (max-width: 640px) { .steps { grid-template-columns: 1fr !important; } }
   .step {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -280,19 +249,9 @@
     opacity: 0.4;
     margin-bottom: 10px;
   }
-  .step h4 {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-weight: 700;
-    font-size: 0.97rem;
-    margin-bottom: 6px;
-  }
-  .step p {
-    color: var(--muted);
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
+  .step h4 { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; font-size: 0.97rem; margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
 
-  /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
     padding: 32px 0;
@@ -305,13 +264,11 @@
   footer p { color: var(--muted); font-size: 0.83rem; }
   footer a { color: var(--accent1); text-decoration: none; font-weight: 600; }
 
-  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* MODAL */
   .modal-overlay {
     display: none;
     position: fixed;
@@ -333,12 +290,7 @@
     text-align: center;
     position: relative;
   }
-  .modal h3 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
+  .modal h3 { font-family: 'Nunito', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
   .modal p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 24px; }
   .modal-close {
     position: absolute;
@@ -362,7 +314,7 @@
     border: none;
     font-family: 'Be Vietnam Pro', sans-serif;
   }
-  /* GUIDE SECTION */
+
   .guide-section {
     border-top: 1px solid var(--border);
     padding: 60px 0 40px;
@@ -420,9 +372,7 @@
   .call-header { background: rgba(0,229,255,0.07); border-bottom: 1px solid rgba(0,229,255,0.12); color: var(--accent1); }
   .sms-header  { background: rgba(124,58,237,0.07); border-bottom: 1px solid rgba(124,58,237,0.12); color: #a78bfa; }
   .guide-icon { font-size: 1.1rem; }
-  .guide-block-body {
-    padding: 18px 20px;
-  }
+  .guide-block-body { padding: 18px 20px; }
   .guide-list {
     list-style: none;
     display: flex;
@@ -460,23 +410,18 @@
 
 <div class="container">
 
-  <!-- NAV -->
   <nav>
     <div class="logo">SmartApp Tools</div>
     <div class="nav-contact">Hỗ trợ: <a href="https://zalo.me/0931077249" target="_blank">Zalo</a> · <a href="https://t.me/Phuoc_Tran18" target="_blank">Telegram</a></div>
   </nav>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="badge">🚀 Công cụ tự động hoá</div>
     <h1>SmartSMS & SmartCall<br><span>tự động hoá bán hàng</span></h1>
     <p>Hai ứng dụng Android giúp bạn tự động gửi tin nhắn hàng loạt và thực hiện cuộc gọi tự động – tiết kiệm thời gian, tăng hiệu quả bán hàng.</p>
   </div>
 
-  <!-- APPS -->
   <div class="apps">
-
-    <!-- SMS App -->
     <div class="app-card sms">
       <div class="app-icon">💬</div>
       <h2>SmartSMS</h2>
@@ -487,12 +432,9 @@
         <li>Nhập danh sách từ file</li>
         <li>Theo dõi trạng thái gửi</li>
       </ul>
-      <a href="#" class="btn-download" onclick="openModal('sms'); return false;">
-        ⬇ Tải APK – SmartSMS
-      </a>
+      <a href="#" class="btn-download" onclick="openModal('sms'); return false;">⬇ Tải APK – SmartSMS</a>
     </div>
 
-    <!-- Call App -->
     <div class="app-card call">
       <div class="app-icon">📞</div>
       <h2>SmartCall</h2>
@@ -503,17 +445,13 @@
         <li>Hẹn giờ gọi thông minh</li>
         <li>Báo cáo cuộc gọi chi tiết</li>
       </ul>
-      <a href="#" class="btn-download" onclick="openModal('call'); return false;">
-        ⬇ Tải APK – SmartCall
-      </a>
+      <a href="#" class="btn-download" onclick="openModal('call'); return false;">⬇ Tải APK – SmartCall</a>
     </div>
-
   </div>
 
-  <!-- HOW TO -->
   <div class="how">
     <h3>Cách cài đặt</h3>
-    <div class="steps" style="grid-template-columns: repeat(2,1fr);">
+    <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
         <h4>Tắt Play Protect <span style="color:#f59e0b;font-size:0.8rem;">⚠ Quan trọng</span></h4>
@@ -537,12 +475,11 @@
     </div>
   </div>
 
-  <!-- USAGE GUIDE TABS -->
   <div class="guide-section">
     <h3 class="guide-title">📖 Hướng dẫn sử dụng</h3>
     <div class="guide-tabs">
-      <button class="guide-tab active" onclick="switchGuide('call')">📞 SmartCall</button>
-      <button class="guide-tab" onclick="switchGuide('sms')">💬 SmartSMS</button>
+      <button class="guide-tab active" onclick="switchGuide('call', this)">📞 SmartCall</button>
+      <button class="guide-tab" onclick="switchGuide('sms', this)">💬 SmartSMS</button>
     </div>
 
     <!-- SMARTCALL GUIDE -->
@@ -632,56 +569,118 @@
 
       <div class="guide-block">
         <div class="guide-block-header sms-header">
-          <span class="guide-icon">📋</span>
-          <span>Bước 1 – Import danh sách & soạn tin</span>
+          <span class="guide-icon">📥</span>
+          <span>Bước 1 – Import danh sách số điện thoại</span>
         </div>
         <div class="guide-block-body">
           <ul class="guide-list">
-            <li>Chuẩn bị file <strong>Excel (.xlsx)</strong> – cột A chứa số điện thoại</li>
-            <li>Mở app → nhấn <strong>📂 Import</strong> để tải danh sách lên</li>
-            <li>Soạn nội dung tin nhắn vào ô text, có thể dùng biến <strong>{tên}</strong> nếu cột B có tên khách</li>
+            <li>Nhấn nút <strong>📂 Import</strong> → chọn file <strong>Excel (.xlsx)</strong> từ bộ nhớ máy</li>
+            <li><strong>Cột A</strong>: Số điện thoại (bắt buộc) — nhiều số cùng dòng cách nhau bằng dấu phẩy hoặc chấm phẩy</li>
+            <li><strong>Cột B</strong>: Nội dung SMS riêng cho từng số (tuỳ chọn, có thể để trống)</li>
+            <li><strong>Cột C trở đi</strong>: Dữ liệu biến dùng trong template — ví dụ <strong>{ten}</strong>, <strong>{so_tien}</strong>, <strong>{CCCD}</strong></li>
+            <li>App tự nhận diện nhà mạng: <strong>Viettel, Mobifone, Vinaphone, VNM</strong> — dùng tab để lọc theo nhóm</li>
+          </ul>
+          <div class="guide-tip">💡 Ví dụ file Excel: Cột A = <em>0912345678</em> · Cột B = <em>(để trống hoặc nội dung riêng)</em> · Cột C = <em>Nguyễn An</em> · Cột D = <em>500,000</em></div>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">✏️</span>
+          <span>Bước 2 – Soạn nội dung SMS</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li>Nhấn <strong>Soạn nội dung SMS</strong> để mở trình soạn template</li>
+            <li>Dùng <strong>{tên_cột}</strong> để chèn dữ liệu tự động từng dòng Excel — ví dụ: <strong>{ten}</strong>, <strong>{so_tien}</strong></li>
+            <li>Nhấn <strong>Preview</strong> để xem trước tin nhắn thực tế trước khi gửi</li>
+            <li>Nhấn <strong>Lưu mẫu SMS</strong> để lưu vào thư viện — dùng lại nhiều lần</li>
+            <li>Nhấn <strong>Chọn mẫu SMS</strong> để tái sử dụng mẫu đã lưu sẵn</li>
+            <li>Nếu để trống template → app tự dùng nội dung từ <strong>cột B</strong> của từng dòng</li>
+          </ul>
+          <div class="guide-tip">💡 Ví dụ template: <em>"Xin chào {ten}, số tiền cần thanh toán: {so_tien} VNĐ. Vui lòng thanh toán trước 31/12. Cảm ơn!"</em></div>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">📡</span>
+          <span>Bước 3 – Chọn SIM gửi</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li><strong>SIM 1 / SIM 2</strong>: Luôn gửi bằng một SIM cố định</li>
+            <li><strong>🔀 Xen kẽ</strong>: Tự động đổi SIM sau mỗi tin — giảm nguy cơ bị chặn spam</li>
+            <li>Vào <strong>Cài đặt → Giới hạn tin/SIM</strong> để đặt hạn mức tối đa mỗi SIM</li>
+            <li>Khi đạt giới hạn, app cảnh báo và hỏi có muốn đổi sang SIM kia không</li>
+            <li>Lưu ý: SMS tính phí theo gói cước SIM — kiểm tra số dư trước khi gửi hàng loạt</li>
           </ul>
         </div>
       </div>
 
       <div class="guide-block">
         <div class="guide-block-header sms-header">
-          <span class="guide-icon">📱</span>
-          <span>Bước 2 – Chọn SIM gửi</span>
+          <span class="guide-icon">🚀</span>
+          <span>Bước 4 – Gửi SMS tự động</span>
         </div>
         <div class="guide-block-body">
           <ul class="guide-list">
-            <li>Chọn <strong>SIM 1</strong> hoặc <strong>SIM 2</strong> để gửi SMS qua SIM đó</li>
-            <li>Lưu ý: SMS tính phí theo gói cước SIM, kiểm tra số dư trước khi gửi hàng loạt</li>
+            <li>Nhấn <strong>⏮ Bắt đầu</strong> → app tự gửi SMS lần lượt từng số trong tab đang xem</li>
+            <li>Nhấn <strong>⏹ Dừng</strong> để tạm dừng bất kỳ lúc nào — app tự lưu trạng thái</li>
+            <li>Nhấn <strong>▶ Tiếp tục</strong> để gửi tiếp từ số còn dang dở</li>
+            <li>Delay ngẫu nhiên mặc định <strong>45–72 giây</strong> giúp tránh bị nhà mạng chặn spam</li>
+            <li>Sau <strong>5 tin thất bại liên tiếp</strong> → app tự dừng và cảnh báo</li>
+            <li>Từng số có thể gửi thủ công bằng nút <strong>▶</strong> bên cạnh mỗi dòng</li>
+          </ul>
+          <div class="guide-tip">⚠️ Khuyến nghị đặt delay ngẫu nhiên <strong>30–90 giây</strong> để tránh bị nhà mạng khoá SIM.</div>
+        </div>
+      </div>
+
+      <div class="guide-block">
+        <div class="guide-block-header sms-header">
+          <span class="guide-icon">⚙️</span>
+          <span>Bước 5 – Cài đặt Delay</span>
+        </div>
+        <div class="guide-block-body">
+          <ul class="guide-list">
+            <li><strong>Delay cố định</strong>: Cách đều X giây giữa mỗi lần gửi</li>
+            <li><strong>Delay ngẫu nhiên</strong>: Ngẫu nhiên trong khoảng MIN–MAX giây (tự nhiên hơn)</li>
+            <li>Nhấn <strong>Cài đặt (⚙️)</strong> từ màn hình chính để điều chỉnh</li>
+            <li>Khuyến nghị: ngẫu nhiên <strong>30–90s</strong> để an toàn nhất với mọi nhà mạng</li>
           </ul>
         </div>
       </div>
 
       <div class="guide-block">
         <div class="guide-block-header sms-header">
-          <span class="guide-icon">▶️</span>
-          <span>Bước 3 – Gửi tự động</span>
+          <span class="guide-icon">💾</span>
+          <span>Bước 6 – Lưu & Khôi phục Session</span>
         </div>
         <div class="guide-block-body">
           <ul class="guide-list">
-            <li>Nhấn <strong>▶ Bắt đầu gửi</strong> → app tự gửi SMS lần lượt từng số</li>
-            <li>Có thể đặt <strong>delay giữa mỗi tin</strong> để tránh bị nhà mạng chặn</li>
-            <li>Nhấn <strong>⏹ Dừng</strong> để tạm dừng bất kỳ lúc nào</li>
+            <li>Nhấn <strong>💾 Lưu Session</strong> → đặt tên → lưu file <em>.smssession</em> ra bộ nhớ máy</li>
+            <li>Khi import file Excel mới, app hỏi có muốn lưu phiên hiện tại không</li>
+            <li>Nhấn <strong>📂 Mở Session</strong> để khôi phục danh sách cũ kèm trạng thái đã gửi</li>
+            <li>App tự động <strong>Autosave mỗi 30 giây</strong> — không lo mất dữ liệu giữa chừng</li>
+            <li>Khi mở lại app, autosave được khôi phục tự động nếu có dữ liệu chưa hoàn thành</li>
           </ul>
-          <div class="guide-tip">⚠️ Nên đặt delay tối thiểu <strong>3–5 giây</strong> giữa mỗi tin để tránh bị nhà mạng khoá SIM do spam.</div>
+          <div class="guide-tip">💡 Nên lưu Session trước khi import file Excel mới để không mất tiến trình cũ.</div>
         </div>
       </div>
 
       <div class="guide-block">
         <div class="guide-block-header sms-header">
           <span class="guide-icon">📊</span>
-          <span>Theo dõi trạng thái gửi</span>
+          <span>Bước 7 – Lịch sử & Xuất báo cáo Excel</span>
         </div>
         <div class="guide-block-body">
           <ul class="guide-list">
+            <li>Nhấn <strong>📋 Lịch sử</strong> để xem thống kê & toàn bộ danh sách đã gửi</li>
+            <li>Hiển thị: tổng tin · thành công · thất bại · tỷ lệ % ngay trên màn hình</li>
             <li>Mỗi số hiển thị trạng thái: <strong style="color:#10b981">✅ Đã gửi</strong> · <strong style="color:#ef4444">❌ Thất bại</strong></li>
-            <li>Xem tổng số đã gửi / thất bại / còn lại ngay trên màn hình chính</li>
-            <li>Xuất báo cáo kết quả ra file Excel sau khi gửi xong</li>
+            <li>Nhấn <strong>📊 Xuất Excel</strong> để tải file báo cáo về máy</li>
+            <li>File Excel gồm: SĐT · SIM gửi · thời gian · nội dung tin · kết quả</li>
+            <li>Nhấn <strong>🗑 Xoá</strong> để xóa toàn bộ lịch sử khi cần thiết</li>
           </ul>
         </div>
       </div>
@@ -690,7 +689,6 @@
 
   </div><!-- end guide-section -->
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 SmartApp Tools. All rights reserved.</p>
     <p>Liên hệ: <a href="https://zalo.me/0931077249">Zalo 0931077249</a> · <a href="https://t.me/Phuoc_Tran18">Telegram</a></p>
@@ -725,23 +723,28 @@ const apps = {
   }
 };
 
-function switchGuide(type) {
-  document.querySelectorAll('.guide-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.guide-tab').forEach(el => el.classList.remove('active'));
+// ✅ FIX: nhận tham số el thay vì dùng event.target
+function switchGuide(type, el) {
+  document.querySelectorAll('.guide-content').forEach(function(e) { e.classList.remove('active'); });
+  document.querySelectorAll('.guide-tab').forEach(function(e) { e.classList.remove('active'); });
   document.getElementById('guide-' + type).classList.add('active');
-  event.target.classList.add('active');
+  el.classList.add('active');
 }
 
-  const app = apps[type];
+// ✅ FIX: hàm openModal đầy đủ, không bị thiếu dấu {
+function openModal(type) {
+  var app = apps[type];
   document.getElementById('modal-icon').textContent = app.icon;
   document.getElementById('modal-title').textContent = 'Tải ' + app.title;
   document.getElementById('modal-desc').textContent = app.desc;
   document.getElementById('modal-link').href = app.link;
   document.getElementById('modal').classList.add('active');
 }
+
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
 }
+
 document.getElementById('modal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
