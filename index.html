@@ -663,14 +663,11 @@ const APPS = {
 };
 
 function openModal(type) {
-  var a = APPS[type];
-  document.getElementById('m-ico').textContent   = a.ico;
-  document.getElementById('m-title').textContent = 'Tải ' + a.title;
-  document.getElementById('m-desc').textContent  = a.desc;
-  var btn = document.getElementById('m-btn');
-  btn.href = a.link;
-  btn.className = 'modal-dl' + (a.cls ? ' ' + a.cls : '');
-  document.getElementById('modal').classList.add('on');
+    var a = APPS[type];
+    var link = document.createElement('a');
+    link.href = a.link;
+    link.download = a.title + '.apk';
+    link.click();
 }
 
 function closeModal() {
