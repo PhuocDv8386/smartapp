@@ -2,6 +2,6 @@
   "send": {
     "version_code": 21,
     "version_name": "1.5.0",
-    "note": "• Thêm tính năng gửi tin nhắn và sửa được nội dung từng số\n• Thêm tính năng sao lưu blocklist\n• Sửa lỗi xoá danh sách lọc.\n• Thêm tính năng nhấn giữ số điện thoại để sao chép nhanh hoặc thêm vào danh sách chặn.\n• Tích hợp tính năng khôi phục trực tiếp vào mục nhập (import) danh sách."
+    "note": "• Nhấn giữ số điện thoại để sao chép, chặn nhanh hoặc gửi tin nhắn thủ công\n• Thêm sao lưu & khôi phục blocklist\n• Tích hợp khôi phục trực tiếp vào mục import danh sách\n• Sửa lỗi xoá danh sách lọc"
   }
 }
