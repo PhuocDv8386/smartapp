@@ -361,7 +361,23 @@ footer a{color:var(--c1);text-decoration:none;font-weight:600;}
   <!-- APP CARDS -->
   <div class="apps">
 
-    <!-- SmartSMS -->
+
+
+        <!-- SmartSend -->
+    <div class="app-card send">
+      <div class="app-ico">🚀</div>
+      <h2>SmartSend</h2>
+      <p>Gửi SMS cá nhân hoá chuyên sâu với hỗ trợ dual-SIM luân phiên và quản lý session nâng cao.</p>
+      <ul class="feat">
+        <li>Dual-SIM luân phiên thông minh</li>
+        <li>Template merge biến động</li>
+        <li>Giới hạn gửi & delay linh hoạt</li>
+        <li>Lịch sử gửi & thống kê realtime</li>
+      </ul>
+      <a href="#" class="btn-dl" onclick="openModal('send');return false;">⬇ Tải APK – SmartSend</a>
+    </div>
+    
+        <!-- SmartSMS -->
     <div class="app-card sms">
       <div class="app-ico">💬</div>
       <h2>SmartSMS</h2>
@@ -374,7 +390,7 @@ footer a{color:var(--c1);text-decoration:none;font-weight:600;}
       </ul>
       <a href="#" class="btn-dl" onclick="openModal('sms');return false;">⬇ Tải APK – SmartSMS</a>
     </div>
-
+    
     <!-- SmartCall -->
     <div class="app-card call">
       <div class="app-ico">📞</div>
@@ -387,20 +403,6 @@ footer a{color:var(--c1);text-decoration:none;font-weight:600;}
         <li>Xuất báo cáo Excel chi tiết</li>
       </ul>
       <a href="#" class="btn-dl" onclick="openModal('call');return false;">⬇ Tải APK – SmartCall</a>
-    </div>
-
-    <!-- SmartSend -->
-    <div class="app-card send">
-      <div class="app-ico">🚀</div>
-      <h2>SmartSend</h2>
-      <p>Gửi SMS cá nhân hoá chuyên sâu với hỗ trợ dual-SIM luân phiên và quản lý session nâng cao.</p>
-      <ul class="feat">
-        <li>Dual-SIM luân phiên thông minh</li>
-        <li>Template merge biến động</li>
-        <li>Giới hạn gửi & delay linh hoạt</li>
-        <li>Lịch sử gửi & thống kê realtime</li>
-      </ul>
-      <a href="#" class="btn-dl" onclick="openModal('send');return false;">⬇ Tải APK – SmartSend</a>
     </div>
 
   </div>
@@ -443,9 +445,9 @@ footer a{color:var(--c1);text-decoration:none;font-weight:600;}
     <div class="section-title">📖 Hướng dẫn sử dụng</div>
 
     <div class="guide-tabs">
-      <button class="tab-btn active-sms" onclick="switchTab('sms',this)">💬 SmartSMS</button>
-      <button class="tab-btn" onclick="switchTab('call',this)">📞 SmartCall</button>
       <button class="tab-btn" onclick="switchTab('send',this)">🚀 SmartSend</button>
+      <button class="tab-btn" onclick="switchTab('call',this)">📞 SmartCall</button>
+      <button class="tab-btn active-sms" onclick="switchTab('sms',this)">💬 SmartSMS</button>
     </div>
 
     <!-- SMS GUIDE -->
