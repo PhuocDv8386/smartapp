@@ -1,6 +1,6 @@
 {
   "send": {
-    "version_code": 20,
+    "version_code": 15,
     "version_name": "1.5.0",
     "note": "• Thêm tính năng sao lưu blocklist\n• Sửa lỗi xoá danh sách lọc.\n• Thêm tính năng nhấn giữ số điện thoại để sao chép nhanh hoặc thêm vào danh sách chặn.\n• Tích hợp tính năng khôi phục trực tiếp vào mục nhập (import) danh sách."
   }
