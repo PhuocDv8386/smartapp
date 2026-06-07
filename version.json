@@ -1,7 +1,7 @@
 {
   "send": {
-    "version_code": 26,
+    "version_code": 28,
     "version_name": "1.5.0",
-    "note": "• Nhấn giữ số điện thoại để sao chép, chặn nhanh hoặc gửi tin nhắn thủ công\n• Thêm sao lưu & khôi phục blocklist\n• Tích hợp khôi phục trực tiếp vào mục import danh sách\n• Sửa lỗi xoá danh sách lọc\n• Thêm nút lịch sử gửi SMS\n• Lịch sử có thể xoá từng tin hoặc xoá tất cả\n• Xuất lịch sử gửi ra file CSV\n• Thời gian lịch sử hiển thị đầy đủ ngày giờ phút giây\n• Import  file mới có thể chọn lọc hoặc giữ nguyên số điện thoại trùng"
+    "note": "• Nhấn giữ số điện thoại để sao chép, chặn nhanh hoặc gửi tin nhắn thủ công\n• Xoá tin nhắn đã gửi ngoài tin nhắn mặc định\n• Thêm sao lưu & khôi phục blocklist\n• Tích hợp khôi phục trực tiếp vào mục import danh sách\n• Sửa lỗi xoá danh sách lọc\n• Thêm nút lịch sử gửi SMS\n• Lịch sử có thể xoá từng tin hoặc xoá tất cả\n• Xuất lịch sử gửi ra file CSV\n• Thời gian lịch sử hiển thị đầy đủ ngày giờ phút giây\n• Import  file mới có thể chọn lọc hoặc giữ nguyên số điện thoại trùng"
   }
 }
