@@ -1,6 +1,6 @@
 {
   "send": {
-    "version_code": 31,
+    "version_code": 32,
     "version_name": "1.5.0",
     "note": "• Nhấn giữ số điện thoại để sao chép, chặn nhanh hoặc gửi tin nhắn thủ công\n• Thêm sao lưu & khôi phục blocklist\n• Thêm tính năng dừng gửi và thông báo khi gửi lỗi liên tục 2 tin nhắn"
   }
