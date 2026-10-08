@@ -1,7 +1,7 @@
 {
   "send": {
-    "version_code": 35,
+    "version_code": 36,
     "version_name": "1.5.0",
-    "note": "• Chờ nhà mạng xác nhận gửi SMS thành công rồi mới chuyển sang tin tiếp theo\n• Mẫu SMS hỗ trợ placeholder dạng {xxx} hoặc xxx\n• Nhận diện và hiển thị số điện thoại của từng SIM (nếu thiết bị/nhà mạng cung cấp)\n• Tinh chỉnh giao diện chọn SIM, mẫu SMS và danh sách chặn gọn, dễ nhìn hơn\n• Nhấn giữ số điện thoại để sao chép, chặn nhanh hoặc gửi tin nhắn thủ công\n• Thêm sao lưu & khôi phục blocklist\n• Thêm tính năng dừng gửi và thông báo khi gửi lỗi liên tục 2 tin nhắn"
+    "note": "• Chạy nền khi màn hình tắt hoặc thoát ra ngoài\n• Chờ nhà mạng xác nhận gửi SMS thành công rồi mới chuyển sang tin tiếp theo\n• Mẫu SMS hỗ trợ placeholder dạng {xxx} hoặc xxx\n• Nhận diện và hiển thị số điện thoại của từng SIM (nếu thiết bị/nhà mạng cung cấp)\n• Tinh chỉnh giao diện chọn SIM, mẫu SMS và danh sách chặn gọn, dễ nhìn hơn\n• Nhấn giữ số điện thoại để sao chép, chặn nhanh hoặc gửi tin nhắn thủ công\n• Thêm sao lưu & khôi phục blocklist\n• Thêm tính năng dừng gửi và thông báo khi gửi lỗi liên tục 2 tin nhắn"
   }
 }
