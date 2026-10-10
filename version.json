@@ -1,7 +1,7 @@
 {
   "send": {
-    "version_code": 39,
-    "version_name": "4.0.0",
+    "version_code": 40,
+    "version_name": "4.0.1",
     "note": "• Giao diện mới hoàn toàn: hiện đại, trực quan, dạng khối kính 3D\n• Cài đặt gọn trong cửa sổ nổi riêng, kéo thả di chuyển được\n• Xác nhận cấu hình trước khi Bắt đầu / Bắt đầu lại / Tiếp tục để tránh sai sót\n• Thêm tuỳ chọn bỏ dấu tiếng Việt (mặc định bật), file import không cần bỏ dấu sẵn nữa\n• Thêm chèn ký tự ngẫu nhiên vào tin nhắn, tránh bị quét trùng nội dung"
   }
 }
