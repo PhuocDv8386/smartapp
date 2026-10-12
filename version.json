@@ -1,7 +1,19 @@
 {
   "send": {
-    "version_code": 44,
-    "version_name": "4.0.4",
-    "note": "• Giao diện mới hoàn toàn: hiện đại, trực quan, dạng khối kính 3D\n• Cài đặt gọn trong cửa sổ nổi riêng, kéo thả di chuyển được\n• Xác nhận cấu hình trước khi Bắt đầu / Bắt đầu lại / Tiếp tục để tránh sai sót\n• Thêm tuỳ chọn bỏ dấu tiếng Việt (mặc định bật), file import không cần bỏ dấu sẵn nữa\n• Thêm chèn ký tự ngẫu nhiên vào tin nhắn, tránh bị quét trùng nội dung"
+    "version_code": 45,
+    "version_name": "4.0.5",
+    "note": "• Fix lỗi giới hạn tin nhắn\n• Thêm nút Kiểm tra cập nhật trong Cài đặt (tự kiểm tra mỗi ngày 1 lần)",
+    "history": [
+      {
+        "version_code": 44,
+        "version_name": "4.0.4",
+        "note": "• Giao diện mới hoàn toàn: hiện đại, trực quan, dạng khối kính 3D\n• Cài đặt gọn trong cửa sổ nổi riêng, kéo thả di chuyển được\n• Xác nhận cấu hình trước khi Bắt đầu / Bắt đầu lại / Tiếp tục để tránh sai sót\n• Thêm tuỳ chọn bỏ dấu tiếng Việt (mặc định bật), file import không cần bỏ dấu sẵn nữa\n• Thêm chèn ký tự ngẫu nhiên vào tin nhắn, tránh bị quét trùng nội dung"
+      },
+      {
+        "version_code": 45,
+        "version_name": "4.0.5",
+        "note": "• Fix lỗi giới hạn tin nhắn\n• Thêm nút Kiểm tra cập nhật trong Cài đặt (tự kiểm tra mỗi ngày 1 lần)"
+      }
+    ]
   }
 }
