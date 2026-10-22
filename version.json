@@ -1,9 +1,14 @@
 {
   "send": {
-    "version_code": 48,
-    "version_name": "4.0.8",
-    "note": "• Hiện đồng hồ đếm giây khi chờ phản hồi tin nhắn, báo rõ lần thử lại để không bị tưởng treo\n• Rút thời gian chờ phản hồi mỗi tin còn 60 giây\n• Tạm dừng khi 2 tin liên tiếp gửi lỗi",
+    "version_code": 49,
+    "version_name": "4.0.9",
+    "note": "• Fix lỗi lệch số lượng tin nhắn với số lượng số bị chặn\n• Danh sách tự trượt theo tin đang gửi, đánh dấu ▶ ở tin hiện tại\n• Thêm nút mũi tên ⬆/⬇ để nhảy về vị trí đang gửi khi lỡ lướt đi chỗ khác\n• Đánh số thứ tự từng dòng, mỗi bộ lọc (Viettel, Mobi, tìm kiếm, trạng thái...) tự đếm lại từ 1",
     "history": [
+      {
+        "version_code": 48,
+        "version_name": "4.0.8",
+        "note": "• Hiện đồng hồ đếm giây khi chờ phản hồi tin nhắn, báo rõ lần thử lại để không bị tưởng treo\n• Rút thời gian chờ phản hồi mỗi tin còn 60 giây\n• Tạm dừng khi 2 tin liên tiếp gửi lỗi"
+      },
       {
         "version_code": 45,
         "version_name": "4.0.5",
