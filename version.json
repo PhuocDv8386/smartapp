@@ -1,9 +1,14 @@
 {
   "send": {
-    "version_code": 49,
-    "version_name": "4.0.9",
-    "note": "• Fix lỗi lệch số lượng tin nhắn với số lượng số bị chặn\n• Danh sách tự trượt theo tin đang gửi, đánh dấu ▶ ở tin hiện tại\n• Thêm nút mũi tên ⬆/⬇ để nhảy về vị trí đang gửi khi lỡ lướt đi chỗ khác\n• Đánh số thứ tự từng dòng, mỗi bộ lọc (Viettel, Mobi, tìm kiếm, trạng thái...) tự đếm lại từ 1",
+    "version_code": 50,
+    "version_name": "5.0.0",
+    "note": "• Thêm cài đặt số lần thử lại khi gửi tin thất bại\n• Thêm cài đặt tự động dừng sau số tin gửi lỗi liên tiếp (thay cho mức cố định 2 tin trước đây)",
     "history": [
+      {
+        "version_code": 49,
+        "version_name": "4.0.9",
+        "note": "• Fix lỗi lệch số lượng tin nhắn với số lượng số bị chặn\n• Danh sách tự trượt theo tin đang gửi, đánh dấu ▶ ở tin hiện tại\n• Thêm nút mũi tên ⬆/⬇ để nhảy về vị trí đang gửi khi lỡ lướt đi chỗ khác\n• Đánh số thứ tự từng dòng, mỗi bộ lọc (Viettel, Mobi, tìm kiếm, trạng thái...) tự đếm lại từ 1"
+      },
       {
         "version_code": 48,
         "version_name": "4.0.8",
