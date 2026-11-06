@@ -1,9 +1,14 @@
 {
   "send": {
-    "version_code": 50,
-    "version_name": "5.0.0",
-    "note": "• Thêm cài đặt số lần thử lại khi gửi tin thất bại\n• Thêm cài đặt tự động dừng sau số tin gửi lỗi liên tiếp (thay cho mức cố định 2 tin trước đây)",
+    "version_code": 51,
+    "version_name": "5.0.1",
+    "note": "• Thêm chế độ Gửi lại tin thất bại: lọc ❌ Thất bại rồi chọn 🔁 Gửi lại, app nạp các tin thất bại của nhà mạng đang chọn và chạy như gửi bình thường (delay, thử lại, luân phiên SIM...)\n• Thêm Gửi lại theo khoảng tin (VD: từ tin 300 đến tin 340)\n• Bộ lọc trạng thái (Thành công / Thất bại / Chưa gửi) giờ lọc theo nhà mạng đang chọn\n• Thêm mục ↩ Thoát chế độ gửi lại để quay về danh sách chính, vị trí gửi của danh sách chính được giữ nguyên",
     "history": [
+      {
+        "version_code": 50,
+        "version_name": "5.0.0",
+        "note": "• Thêm cài đặt số lần thử lại khi gửi tin thất bại\n• Thêm cài đặt tự động dừng sau số tin gửi lỗi liên tiếp (thay cho mức cố định 2 tin trước đây)"
+      },
       {
         "version_code": 49,
         "version_name": "4.0.9",
